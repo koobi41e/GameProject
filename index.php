@@ -56,7 +56,8 @@ if($tableOperation == "makePlayer")
     //it should auto increment and have a null value for team.
     $makeCmd = "INSERT into [dbo].[leaderboards] values ($name,0,0,0,null)";
     $makePlayer = sqlsrv_query($conn, $makeCmd);
-    echo "you have finished calling table operation (makePlayer)";
+    echo "you have finished calling table operation (makePlayer) \n";
+    echo "name is $name";
 }
 
 if($tableOperation == "updateKill")
