@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="Game@koobi.database.windows.net" uuid="6fe79ca2-4e1d-4c92-8c8c-2889602898ee">
+    <data-source source="LOCAL" name="GameDB" uuid="5f444f90-c00e-4aa9-b130-989533f3a5ff">
       <driver-ref>sqlserver.ms</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
