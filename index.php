@@ -28,6 +28,7 @@ if($conn != true)
 else
 {
     echo "connected to Jose DB!!!";
+
 }
 
 //creating the table
@@ -53,7 +54,7 @@ if($tableOperation == "makePlayer")
 {
     echo "you have called table operation (makePlayer)";
     //it should auto increment and have a null value for team.
-    $makeCmd = "INSERT into [dbo].[leaderboards] values ($name,0,0,0)";
+    $makeCmd = "INSERT into [dbo].[leaderboards] values ('$name',0,0,0,null)";
     $makePlayer = sqlsrv_query($conn, $makeCmd);
     echo "you have finished calling table operation (makePlayer)";
 }
