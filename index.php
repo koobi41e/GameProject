@@ -7,9 +7,10 @@
  */
 
 //Connection to DB
-$server = "tcp:gaminggroup.database.windows.net,1433";
+$server = "tcp:koobi.database.windows.net,1433";
 $connectionTimeoutSeconds = 30;
-$connectionOptions = array("Database"=>"Game", "Uid"=>"salinasj14", "PWD"=>"Eastcarolina14", "LoginTimeout" => $connectionTimeoutSeconds);
+//$connectionOptions = array("Database"=>"Game", "Uid"=>"salinasj14", "PWD"=>"Eastcarolina14", "LoginTimeout" => $connectionTimeoutSeconds);
+$connectionOptions = array("Database"=>"Game", "Uid"=>"koobi41e", "PWD"=>"Picollo1", "LoginTimeout" => $connectionTimeoutSeconds);
 $conn = sqlsrv_connect($server,$connectionOptions);
 
 //Strings to access from client side
@@ -27,7 +28,7 @@ if($conn != true)
 }
 else
 {
-    echo "connected to Jose DB!!!";
+    echo "connected to my DB";
 }
 
 //creating the table
