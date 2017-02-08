@@ -74,7 +74,7 @@ if($tableOperation == "updateDeath")
     echo "you have called table operation (updateDeath)";
     $deathCmd = "UPDATE [dbo].[leaderboards] set Deaths = Deaths+1 where Name = '$name'";
     $updateDeath = sqlsrv_query($conn,$deathCmd);
-    echo "you have finished calling  table operation (updatingKill)";
+    echo "you have finished calling  table operation (updatingDeath)";
 }
 
 //incrementing the score
@@ -82,7 +82,7 @@ if($tableOperation == "incScores")
 {
     echo "you have called table operation (incScores)";
     $incCmd = "UPDATE [dbo].[leaderboards] set Scores = Scores+1 where Name = '$name'";
-    $incScores = sqlsrv_query($conn,$incScores);
+    $incScores = sqlsrv_query($conn,$incCmd);
     echo "you have finished calling  table operation (incScores)";
 }
 
@@ -94,7 +94,7 @@ if($tableOperation == "setTeam")
     {
         $set = "UPDATE [dbo].[leaderboards] set Team = 1 where Name = '$name'";
     }
-    else
+    else if($team = 2)
     {
         $set = "UPDATE [dbo].[leaderboards] set Team = 2 where Name = '$name'";
     }
