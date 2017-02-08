@@ -94,7 +94,7 @@ if($tableOperation == "setTeam")
     {
         $set = "UPDATE [dbo].[leaderboards] set Team = 1 where Name = '$name'";
     }
-    else if($team = 2)
+    if($team = 2)
     {
         echo "you entered in setTeam 2!";
         $set = "UPDATE [dbo].[leaderboards] set Team = 2 where Name = '$name'";
