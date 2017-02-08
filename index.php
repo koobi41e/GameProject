@@ -60,6 +60,9 @@ if($tableOperation == "makePlayer")
     echo "name is $name";
 }
 
+//removing a player from the database
+//there is an error somewhere here. It wont go inside the if stmt
+echo "about to check delete player";
 if($tableOperation == "deletePlayer")
 {
     echo "you have called table operation (deletePlayer)";
@@ -67,6 +70,16 @@ if($tableOperation == "deletePlayer")
     $deletePlayer = sqlsrv_query($conn, $deletePlayerCmd);
     echo "you have finished calling table operation (deletePlayer) \n";
 }
+
+echo "about to check remove player";
+if($tableOperation == "removePlayer")
+{
+    echo "you have called table operation (removePlayer)";
+    $removeCmd = "DELETE from [dbo].[leaderboards] where name = '$name'";
+    $removePlayer = sqlsrv_query($conn,$removeCmd);
+    echo "you have finished calling  table operation (removePlayer)";
+}
+
 //update the kill in the table
 if($tableOperation == "updateKill")
 {
