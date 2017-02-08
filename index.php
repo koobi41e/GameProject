@@ -96,7 +96,7 @@ if($tableOperation == "setTeam")
     }
     else if($team = 2)
     {
-        echo "you entered in setTeam 2";
+        echo "you entered in setTeam 2!";
         $set = "UPDATE [dbo].[leaderboards] set Team = 2 where Name = '$name'";
     }
     $setTeam = sqlsrv_query($conn,$set);
