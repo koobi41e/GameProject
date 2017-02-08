@@ -92,11 +92,11 @@ if($tableOperation == "setTeam")
     echo "you have called table operation (setTeam)";
     echo "team is $team \n";
     //there is an error in here that i need to fix. The tables are not correctly assigned
-    if($team = 1)
+    if($team == 1)
     {
         $set = "UPDATE [dbo].[leaderboards] set Team = 1 where Name = '$name'";
     }
-    else if($team = 2)
+    else if($team == 2)
     {
         echo "you entered in setTeam 2!!!";
         $set = "UPDATE [dbo].[leaderboards] set Team = 2 where Name = '$name'";
