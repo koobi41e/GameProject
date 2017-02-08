@@ -59,6 +59,14 @@ if($tableOperation == "makePlayer")
     echo "you have finished calling table operation (makePlayer) \n";
     echo "name is $name";
 }
+
+if($tableOperation == "deletePlayer")
+{
+    echo "you have called table operation (deletePlayer)";
+    $deletePlayerCmd = "DELETE from [dbo].[leaderboards] where name = '$name'";
+    $deletePlayer = sqlsrv_query($conn, $deletePlayerCmd);
+    echo "you have finished calling table operation (deletePlayer) \n";
+}
 //update the kill in the table
 if($tableOperation == "updateKill")
 {
@@ -91,7 +99,6 @@ if($tableOperation == "setTeam")
 {
     echo "you have called table operation (setTeam)";
     echo "team is $team \n";
-    //there is an error in here that i need to fix. The tables are not correctly assigned
     if($team == 1)
     {
         $set = "UPDATE [dbo].[leaderboards] set Team = 1 where Name = '$name'";
@@ -105,7 +112,7 @@ if($tableOperation == "setTeam")
     echo "you have finished calling  table operation (setTeam)";
 }
 //delete table
-if($tableOperation == "delete")
+if($tableOperation == "deleteTable")
 {
     echo "you have called table operation (delete)";
     $deleteCmd = "Drop Table [dbo].[leaderboards]";
