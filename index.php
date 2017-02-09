@@ -103,4 +103,14 @@ if($tableOperation == "deleteTable")
     $delete = sqlsrv_query($conn,$deleteCmd);
 }
 
+if($tableOperation == "showRows")
+{
+    $stmt = "select name,kills,deaths,scores,team from [dbo].[leaderboards]";
+    $result = odbc_exec($conn,$stmt);
+    if ($result == FALSE) die ("could not execute statement $stmt<br />");
+    while(odbc_fetch_row($result)) //while there are rows
+    {
+        print odbc_result($result,"Name");
+    }
+}
 
