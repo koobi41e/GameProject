@@ -76,7 +76,7 @@ if($tableOperation == "updateDeath")
     $updateDeath = sqlsrv_query($conn,$deathCmd);
 }
 
-//incrementing the score
+//incrementing the score.
 if($tableOperation == "incScores")
 {
     $incCmd = "UPDATE [dbo].[leaderboards] set Scores = Scores+1 where Name = '$name'";
