@@ -105,6 +105,7 @@ if($tableOperation == "deleteTable")
 
 if($tableOperation == "showRows")
 {
+    echo "You have entered showRows";
     $stmt = "select name,kills,deaths,scores,team from [dbo].[leaderboards]";
     $result = odbc_exec($conn,$stmt);
     if ($result == FALSE) die ("could not execute statement $stmt<br />");
@@ -112,5 +113,6 @@ if($tableOperation == "showRows")
     {
         print odbc_result($result,"Name");
     }
+    echo "You have finished calling showRows";
 }
 
