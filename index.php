@@ -113,9 +113,8 @@ if($tableOperation == "showRows")
         //echo"<br />";
         //print "<tr>\n";
         echo "<br>";
-        echo $row['Name'].", ".$row['Kills'].", ".$row['Deaths']. ", ".$row['Scores'].", ".$row['Team'];
+        echo $row['Name'].", ".$row['Kills'].", ".$row['Deaths'].", ".$row['Scores'].", ".$row['Team']."<br />";
         echo "<br>";
     }
-    sqlsrv_free_stmt($result);
 }
 
