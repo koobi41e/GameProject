@@ -60,13 +60,72 @@ if($tableOperation == "makePlayer")
     echo "name is $name";
 }
 
-if($tableOperation == "updateKill")
+//removing a player from the database
+//there is an error somewhere here. It wont go inside the if stmt
+echo "about to check delete player";
+if($tableOperation == "deletePlayer")
 {
-    //$tableOperation = ""
+    echo "you have called table operation (deletePlayer)";
+    $deletePlayerCmd = "DELETE from [dbo].[leaderboards] where name = '$name'";
+    $deletePlayer = sqlsrv_query($conn, $deletePlayerCmd);
+    echo "you have finished calling table operation (deletePlayer) \n";
 }
 
+echo "about to check remove player";
+if($tableOperation == "removePlayer")
+{
+    echo "you have called table operation (removePlayer)";
+    $removeCmd = "DELETE from [dbo].[leaderboards] where name = '$name'";
+    $removePlayer = sqlsrv_query($conn,$removeCmd);
+    echo "you have finished calling  table operation (removePlayer)";
+}
+
+//update the kill in the table
+if($tableOperation == "updateKill")
+{
+    echo "you have called table operation (updateKill)";
+    $killCmd = "UPDATE [dbo].[leaderboards] set Kills = Kills+1 where Name = '$name'";
+    $updateKill = sqlsrv_query($conn,$killCmd);
+    echo "you have finished calling  table operation (updatingKill)";
+}
+
+//updating the death in the table
+if($tableOperation == "updateDeath")
+{
+    echo "you have called table operation (updateDeath)";
+    $deathCmd = "UPDATE [dbo].[leaderboards] set Deaths = Deaths+1 where Name = '$name'";
+    $updateDeath = sqlsrv_query($conn,$deathCmd);
+    echo "you have finished calling  table operation (updatingDeath)";
+}
+
+//incrementing the score
+if($tableOperation == "incScores")
+{
+    echo "you have called table operation (incScores)";
+    $incCmd = "UPDATE [dbo].[leaderboards] set Scores = Scores+1 where Name = '$name'";
+    $incScores = sqlsrv_query($conn,$incCmd);
+    echo "you have finished calling  table operation (incScores)";
+}
+
+//setting teams
+if($tableOperation == "setTeam")
+{
+    echo "you have called table operation (setTeam)";
+    echo "team is $team \n";
+    if($team == 1)
+    {
+        $set = "UPDATE [dbo].[leaderboards] set Team = 1 where Name = '$name'";
+    }
+    else if($team == 2)
+    {
+        echo "you entered in setTeam 2!!!";
+        $set = "UPDATE [dbo].[leaderboards] set Team = 2 where Name = '$name'";
+    }
+    $setTeam = sqlsrv_query($conn,$set);
+    echo "you have finished calling  table operation (setTeam)";
+}
 //delete table
-if($tableOperation == "delete")
+if($tableOperation == "deleteTable")
 {
     echo "you have called table operation (delete)";
     $deleteCmd = "Drop Table [dbo].[leaderboards]";
