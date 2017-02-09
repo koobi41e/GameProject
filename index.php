@@ -126,7 +126,7 @@ if($tableOperation == "setTeam")
         $set = "UPDATE [dbo].[leaderboards] set Team = 2 where Name = '$name'";
     }
     $setTeam = sqlsrv_query($conn,$set);
-    echo "you have finished calling  table operation (setTeam)";
+    echo "you have finished calling table operation (setTeam)";
 }
 
 //delete table
