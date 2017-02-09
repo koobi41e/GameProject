@@ -105,20 +105,14 @@ if($tableOperation == "deleteTable")
 
 if($tableOperation == "showRows")
 {
-    echo "You have entered showRows ";
     $stmt = "select name,kills,deaths,scores,team from [dbo].[leaderboards]";
-//    $result = odbc_exec($conn,$stmt);
-//    if ($result == FALSE) die ("could not execute statement $stmt<br />");
-//    while(odbc_fetch_row($result)) //while there are rows
-//    {
-//        print odbc_result($result,"Name");
-//    }
     $result = sqlsrv_query($conn, $stmt);
     while($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC))
     {
         print_r($row);
+        echo '\n';
+        echo "calling this one too", PHP_EOL;
     }
     sqlsrv_free_stmt($result);
-    echo "You have finished calling showRows";
 }
 
