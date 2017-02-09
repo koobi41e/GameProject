@@ -112,6 +112,9 @@ if($tableOperation == "showRows")
         print_r($row);
         echo '\n';
         echo "calling this one too", PHP_EOL;
+        echo"using br <br />";
+        echo "using tr";
+        print "<tr>\n";
     }
     sqlsrv_free_stmt($result);
 }
