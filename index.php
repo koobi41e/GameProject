@@ -107,14 +107,13 @@ if($tableOperation == "showRows")
 {
     $stmt = "select name,kills,deaths,scores,team from [dbo].[leaderboards]";
     $result = sqlsrv_query($conn, $stmt);
-    while($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC))
+    while($row = sqlsrv_fetch_array($result))
     {
-        print_r($row);
-        echo '\n';
-        echo "calling this one too", PHP_EOL;
-        echo"using br <br />";
-        echo "using tr";
-        print "<tr>\n";
+        //print_r($row);
+        //echo"<br />";
+        //print "<tr>\n";
+        echo($row['Name'] . ', '. $row['Kills'] . ', '. $row['Deaths']. ', '. $row['Scores']. ', '. $row['Team'] );
+        echo "<br>";
     }
     sqlsrv_free_stmt($result);
 }
