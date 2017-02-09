@@ -105,7 +105,7 @@ if($tableOperation == "deleteTable")
 
 if($tableOperation == "showRows")
 {
-    $stmt = "select name,kills,deaths,scores,team from [dbo].[leaderboards]";
+    $stmt = "select * from [dbo].[leaderboards]";
     $result = sqlsrv_query($conn, $stmt);
     while($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC))
     {
