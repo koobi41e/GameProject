@@ -1,16 +1,15 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Ibook
+ * User: Jose Salinas
  * Date: 2/6/17
  * Time: 6:09 PM
  */
 
 //Connection to DB
-$server = "tcp:koobi.database.windows.net,1433";
+$server = "tcp:gaminggroup.database.windows.net,1433";
 $connectionTimeoutSeconds = 30;
-//$connectionOptions = array("Database"=>"Game", "Uid"=>"salinasj14", "PWD"=>"Eastcarolina14", "LoginTimeout" => $connectionTimeoutSeconds);
-$connectionOptions = array("Database"=>"Game", "Uid"=>"koobi41e", "PWD"=>"Picollo1", "LoginTimeout" => $connectionTimeoutSeconds);
+$connectionOptions = array("Database"=>"Game", "Uid"=>"salinasj14", "PWD"=>"Eastcarolina14", "LoginTimeout" => $connectionTimeoutSeconds);
 $conn = sqlsrv_connect($server,$connectionOptions);
 
 //Strings to access from client side
@@ -26,15 +25,18 @@ if($conn != true)
 {
     echo "did not make a connection";
 }
-else
-{
-    echo "connected to my DB";
-}
+//else
+//{
+  //  echo "connected to my DB";
+   // echo "<br>";
+//}
 
 //creating the table
-if($tableOperation == "create")
-{
-    echo "you have called table operation (create)";
+
+//if($tableOperation == 'create')
+//{
+    //echo "you have called table operation and create";
+    //echo "<br>";
     $createCmd = "CREATE TABLE [dbo].[leaderboards]
     (
 	  [Id] INT IDENTITY(1,1) NOT NULL PRIMARY KEY, 
@@ -45,9 +47,65 @@ if($tableOperation == "create")
       [Team] INT
     )";
     $create = sqlsrv_query($conn, $createCmd);
-    echo "you have finished calling table operation (create)";
+   //echo "you have finished calling table operation (create)";
+//}
+
+// Koobi's code'
+/*
+$stmt = "select * from [dbo].[leaderboards]";
+$result = sqlsrv_query($conn, $stmt);
+while($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC))
+{
+    //print_r($row);
+    //echo"<br />";
+    //print "<tr>\n";
+    echo "<br>";
+    echo $row['Name'].", ".$row['Kills'].", ".$row['Deaths'].", ".$row['Scores'].", ".$row['Team']."<br />";
+    echo "<br>";
+}
+*/
+
+// My code
+
+$tsql = "SELECT * FROM leaderboards";
+$getProducts = sqlsrv_query($conn, $tsql);
+if ($getProducts == FALSE)
+{
+    die(FormatErrors(sqlsrv_errors()));
+}
+$productCount = 0;
+$ctr = 0;
+$counter = 0;
+/*
+    echo "<br>";
+    echo "Id Name Kills Deaths Scores Team ";
+    "<br />";
+    echo "<br>";
+*/
+while( $row = sqlsrv_fetch_array( $getProducts, SQLSRV_FETCH_ASSOC ))
+{
+    echo "Name"."=".$row['Name']."|"."Kills"."=".$row['Kills']."|"
+        ."Deaths"."=".$row['Deaths']."|"."Scores"."=".$row['Scores']."|"."Team". "=".$row['Team'].";";
 }
 
+
+/*
+// Code for Earl
+$tsql = "SELECT * FROM leaderboards";
+$getProducts = sqlsrv_query($conn, $tsql);
+if ($getProducts == FALSE)
+{
+    die(FormatErrors(sqlsrv_errors()));
+}
+$productCount = 0;
+$ctr = 0;
+$counter = 0;
+while( $row = sqlsrv_fetch_array( $getProducts, SQLSRV_FETCH_ASSOC ))
+{
+    print_r($row);
+}
+sqlsrv_free_stmt($getProducts);
+*/
 
 //inserting values
 if($tableOperation == "makePlayer")
@@ -61,23 +119,15 @@ if($tableOperation == "makePlayer")
 }
 
 //removing a player from the database
-//there is an error somewhere here. It wont go inside the if stmt
-echo "about to check delete player";
+
 if($tableOperation == "deletePlayer")
 {
+    echo "about to check delete player";
+    echo "<br>";
     echo "you have called table operation (deletePlayer)";
     $deletePlayerCmd = "DELETE from [dbo].[leaderboards] where name = '$name'";
     $deletePlayer = sqlsrv_query($conn, $deletePlayerCmd);
     echo "you have finished calling table operation (deletePlayer) \n";
-}
-
-echo "about to check remove player";
-if($tableOperation == "removePlayer")
-{
-    echo "you have called table operation (removePlayer)";
-    $removeCmd = "DELETE from [dbo].[leaderboards] where name = '$name'";
-    $removePlayer = sqlsrv_query($conn,$removeCmd);
-    echo "you have finished calling  table operation (removePlayer)";
 }
 
 //update the kill in the table
@@ -114,16 +164,21 @@ if($tableOperation == "setTeam")
     echo "team is $team \n";
     if($team == 1)
     {
+        echo "you entered in setTeam 2!!!";
         $set = "UPDATE [dbo].[leaderboards] set Team = 1 where Name = '$name'";
+        echo "<br>";
     }
     else if($team == 2)
     {
         echo "you entered in setTeam 2!!!";
         $set = "UPDATE [dbo].[leaderboards] set Team = 2 where Name = '$name'";
+        echo "<br>";
     }
     $setTeam = sqlsrv_query($conn,$set);
     echo "you have finished calling  table operation (setTeam)";
+    echo "<br>";
 }
+
 //delete table
 if($tableOperation == "deleteTable")
 {
@@ -132,5 +187,6 @@ if($tableOperation == "deleteTable")
     $delete = sqlsrv_query($conn,$deleteCmd);
     echo "you have finished calling table operation (delete)";
 }
+
 
 
