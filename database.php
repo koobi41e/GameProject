@@ -84,8 +84,7 @@ $counter = 0;
 */
 while( $row = sqlsrv_fetch_array( $getProducts, SQLSRV_FETCH_ASSOC ))
 {
-    echo "Name"."=".$row['Name']."|"."Kills"."=".$row['Kills']."|"
-        ."Deaths"."=".$row['Deaths']."|"."Scores"."=".$row['Scores']."|"."Team". "=".$row['Team'].";";
+    echo $row['Name']."|".$row['Kills']."|".$row['Deaths']."|".$row['Scores']."|".$row['Team'].";";
 }
 
 
