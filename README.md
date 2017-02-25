@@ -1,6 +1,6 @@
 # GameProject
 Name: Untitled
 
-A fast-paced addicting game with high replayability.
-A game for friends to play together, have fun, and make memories. 
-Players will need to think on their feet in order to dominate the competition!
+ACTION: "A fast-pace game with high replayability."
+MULTIPLAYER: "A game for friends to play together, have fun, and make memories."
+STRATEGY: "Players will need to think on their feet in order to dominate the competition!"
