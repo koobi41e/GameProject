@@ -1,6 +1,6 @@
 # GameProject
+Name: Untitled
 
-Respawn.cs:
-  Add script to object
-  Adjust spawn position
-  Adjust death conditions (default clock == 3000 frames)
+A fast-paced addicting game with high replayability.
+A game for friends to play together, have fun, and make memories. 
+Players will need to think on their feet in order to dominate the competition!
