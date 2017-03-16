@@ -1,0 +1,147 @@
+Initialize engine version: 5.5.0f3 (38b4efef76f0)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: Intel(R) HD Graphics 4400 (ID=0x41e)
+    Vendor:   Intel
+    VRAM:     1072 MB
+    Driver:   10.18.14.4414
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+Platform assembly: C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+Platform assembly: C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\Photon3Unity3D.dll (this message is harmless)
+Loading C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
+- Completed reload, in  0.023 seconds
+Platform assembly: C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\System.dll (this message is harmless)
+desktop: 1280x1024 60Hz; virtual: 1280x1024 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 1.030577 ms
+Initialize engine version: 5.5.0f3 (38b4efef76f0)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: Intel(R) HD Graphics 4400 (ID=0x41e)
+    Vendor:   Intel
+    VRAM:     1072 MB
+    Driver:   10.18.14.4414
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+Platform assembly: C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+Platform assembly: C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\Photon3Unity3D.dll (this message is harmless)
+Loading C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
+- Completed reload, in  0.023 seconds
+Platform assembly: C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\System.dll (this message is harmless)
+desktop: 1280x1024 60Hz; virtual: 1280x1024 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 2.906386 ms
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 4.466138 ms
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 1263.
+Total: 0.284661 ms (FindLiveObjects: 0.062184 ms CreateObjectMapping: 0.022640 ms MarkObjects: 0.190176 ms  DeleteObjects: 0.009056 ms)
+
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 17cc -> priority: 1 
+Initialize engine version: 5.5.0f3 (38b4efef76f0)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: Intel(R) HD Graphics 4400 (ID=0x41e)
+    Vendor:   Intel
+    VRAM:     1072 MB
+    Driver:   10.18.14.4414
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+Platform assembly: C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+Platform assembly: C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\Photon3Unity3D.dll (this message is harmless)
+Loading C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
+- Completed reload, in  0.028 seconds
+Platform assembly: C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Public\Documents\Unity Projects\4140Proj\pres\Pres\Builds\buildv0.1_Data\Managed\System.dll (this message is harmless)
+desktop: 1280x1024 60Hz; virtual: 1280x1024 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 1.144683 ms
+The referenced script on this Behaviour (Game Object 'CharacterRobotGirl') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'obj_flag') is missing!
+ 
+(Filename:  Line: 1754)
+
+Unloading 7 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.349741 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 1871.
+Total: 0.474234 ms (FindLiveObjects: 0.092975 ms CreateObjectMapping: 0.026564 ms MarkObjects: 0.349865 ms  DeleteObjects: 0.004528 ms)
+
+Parent of RectTransform is being set with parent property. Consider using the SetParent method instead, with the worldPositionStays argument set to false. This will retain local orientation and scale rather than world orientation and scale, which can prevent common UI scaling issues.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 1bb0 -> priority: 1 
+The referenced script on this Behaviour (Game Object 'CharacterRobotGirl') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'obj_flag') is missing!
+ 
+(Filename:  Line: 1754)
+
+Unloading 7 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 3.104411 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 1871.
+Total: 0.780630 ms (FindLiveObjects: 0.148519 ms CreateObjectMapping: 0.039242 ms MarkObjects: 0.586227 ms  DeleteObjects: 0.006037 ms)
+
+Parent of RectTransform is being set with parent property. Consider using the SetParent method instead, with the worldPositionStays argument set to false. This will retain local orientation and scale rather than world orientation and scale, which can prevent common UI scaling issues.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 1f44 -> priority: 1 
