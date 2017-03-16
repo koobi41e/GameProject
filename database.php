@@ -28,6 +28,7 @@ if($conn != true)
 // echo "<br>";
 //}
 //creating the table
+// call operations on site with ?operation=
 if($tableOperation == 'create')
 {
 $createCmd = "CREATE TABLE [dbo].[leaderboards]
