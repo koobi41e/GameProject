@@ -155,7 +155,7 @@ if($tableOperation == "highestScore")
     {
         echo "row is $row";
     }
-
+    echo "you have finished calling table operation (highestScore)";
 
 }
 
