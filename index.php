@@ -33,10 +33,10 @@ else
 
 //creating the table
 
-//if($tableOperation == 'create')
-//{
-    //echo "you have called table operation and create";
-    //echo "<br>";
+if($tableOperation == 'create')
+{
+    echo "you have called table operation and create";
+    echo "<br>";
     $createCmd = "CREATE TABLE [dbo].[leaderboards]
     (
 	  [Id] INT IDENTITY(1,1) NOT NULL PRIMARY KEY, 
@@ -47,65 +47,22 @@ else
       [Team] INT
     )";
     $create = sqlsrv_query($conn, $createCmd);
-   //echo "you have finished calling table operation (create)";
-//}
-
-// Koobi's code'
-/*
-$stmt = "select * from [dbo].[leaderboards]";
-$result = sqlsrv_query($conn, $stmt);
-while($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC))
-{
-    //print_r($row);
-    //echo"<br />";
-    //print "<tr>\n";
-    echo "<br>";
-    echo $row['Name'].", ".$row['Kills'].", ".$row['Deaths'].", ".$row['Scores'].", ".$row['Team']."<br />";
-    echo "<br>";
-}
-*/
-
-// My code
-
-$tsql = "SELECT * FROM leaderboards";
-$getProducts = sqlsrv_query($conn, $tsql);
-if ($getProducts == FALSE)
-{
-    die(FormatErrors(sqlsrv_errors()));
-}
-$productCount = 0;
-$ctr = 0;
-$counter = 0;
-/*
-    echo "<br>";
-    echo "Id Name Kills Deaths Scores Team ";
-    "<br />";
-    echo "<br>";
-*/
-while( $row = sqlsrv_fetch_array( $getProducts, SQLSRV_FETCH_ASSOC ))
-{
-    echo "Name"."=".$row['Name']."|"."Kills"."=".$row['Kills']."|"
-        ."Deaths"."=".$row['Deaths']."|"."Scores"."=".$row['Scores']."|"."Team". "=".$row['Team'].";";
+    echo "you have finished calling table operation (create)";
 }
 
-
-/*
-// Code for Earl
-$tsql = "SELECT * FROM leaderboards";
-$getProducts = sqlsrv_query($conn, $tsql);
-if ($getProducts == FALSE)
+if($tableOperation == "showData")
 {
-    die(FormatErrors(sqlsrv_errors()));
+    $tsql = "SELECT * FROM leaderboards";
+    $getProducts = sqlsrv_query($conn, $tsql);
+    if ($getProducts == FALSE)
+    {
+        die(FormatErrors(sqlsrv_errors()));
+    }
+    while( $row = sqlsrv_fetch_array( $getProducts, SQLSRV_FETCH_ASSOC ))
+    {
+        echo $row['Name']."|".$row['Kills']."|".$row['Deaths']."|".$row['Scores']."|".$row['Team'].";";
+    }
 }
-$productCount = 0;
-$ctr = 0;
-$counter = 0;
-while( $row = sqlsrv_fetch_array( $getProducts, SQLSRV_FETCH_ASSOC ))
-{
-    print_r($row);
-}
-sqlsrv_free_stmt($getProducts);
-*/
 
 //inserting values
 if($tableOperation == "makePlayer")
@@ -188,5 +145,10 @@ if($tableOperation == "deleteTable")
     echo "you have finished calling table operation (delete)";
 }
 
+if($tableOperation == "highestScore")
+{
+    echo "you have called table operation (highestScore)";
+
+}
 
 
