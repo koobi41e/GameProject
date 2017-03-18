@@ -1,15 +1,15 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Jose Salinas
+ * User: Jose Salinas and Ibook Eyoita
  * Date: 2/6/17
  * Time: 6:09 PM
  */
 
 //Connection to DB
-$server = "tcp:gaminggroup.database.windows.net,1433";
+$server = "tcp:koobi.database.windows.net,1433";
 $connectionTimeoutSeconds = 30;
-$connectionOptions = array("Database"=>"Game", "Uid"=>"salinasj14", "PWD"=>"Eastcarolina14", "LoginTimeout" => $connectionTimeoutSeconds);
+$connectionOptions = array("Database"=>"Game", "Uid"=>"koobi41e", "PWD"=>"Picollo1", "LoginTimeout" => $connectionTimeoutSeconds);
 $conn = sqlsrv_connect($server,$connectionOptions);
 
 //Strings to access from client side
@@ -25,11 +25,11 @@ if($conn != true)
 {
     echo "did not make a connection";
 }
-//else
-//{
-  //  echo "connected to my DB";
-   // echo "<br>";
-//}
+else
+{
+    echo "connected to my DB";
+    echo "<br>";
+}
 
 //creating the table
 
