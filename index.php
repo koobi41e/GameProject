@@ -149,7 +149,7 @@ if($tableOperation == "highestScore")
 {
     echo "you have called table operation (highestScore)";
     echo "<br>";
-    $maxScore = "SELECT MAX(Scores) AS highestScore FROM leaderboards";
+    $maxScore = "SELECT Name, Scores FROM leaderboards WHERE Scores = (Select max(Scores) From leaderboards)";
     $getScore = sqlsrv_query($conn, $maxScore);
     echo "getScores is $getScores";
     echo "<br>";
