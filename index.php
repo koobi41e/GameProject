@@ -151,8 +151,6 @@ if($tableOperation == "highestScore")
     echo "<br>";
     $maxScore = "SELECT Name, Scores FROM leaderboards WHERE Scores = (Select max(Scores) From leaderboards)";
     $getScore = sqlsrv_query($conn, $maxScore);
-    echo "getScores is $getScores";
-    echo "<br>";
     while( $row = sqlsrv_fetch_array( $getScore, SQLSRV_FETCH_ASSOC ))
     {
         echo $row['Name']."|".$row['Scores']."|".";";
