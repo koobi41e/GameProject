@@ -129,3 +129,16 @@ if($tableOperation == "deleteTable")
     $delete = sqlsrv_query($conn,$deleteCmd);
     echo "you have finished calling table operation (delete)";
 }
+
+//get the highest score
+if($tableOperation == "highestScore")
+{
+    $maxScore = "SELECT Name, Scores FROM leaderboards WHERE Scores = (Select max(Scores) From leaderboards)";
+    $getScore = sqlsrv_query($conn, $maxScore);
+    while( $row = sqlsrv_fetch_array( $getScore, SQLSRV_FETCH_ASSOC ))
+    {
+        echo $row['Name']."|".$row['Scores']."|".";";
+        echo "<br>";
+    }
+}
+
