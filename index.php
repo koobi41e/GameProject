@@ -25,11 +25,11 @@ if($conn != true)
 {
     echo "did not make a connection";
 }
-else
-{
-    echo "connected to my DB";
-    echo "<br>";
-}
+//else
+//{
+//    echo "connected to my DB";
+//    echo "<br>";
+//}
 
 //creating the table
 
@@ -147,8 +147,6 @@ if($tableOperation == "deleteTable")
 
 if($tableOperation == "highestScore")
 {
-    echo "you have called table operation (highestScore)";
-    echo "<br>";
     $maxScore = "SELECT Name, Scores FROM leaderboards WHERE Scores = (Select max(Scores) From leaderboards)";
     $getScore = sqlsrv_query($conn, $maxScore);
     while( $row = sqlsrv_fetch_array( $getScore, SQLSRV_FETCH_ASSOC ))
@@ -156,8 +154,6 @@ if($tableOperation == "highestScore")
         echo $row['Name']."|".$row['Scores']."|".";";
         echo "<br>";
     }
-    echo "you have finished calling table operation (highestScore)<br>";
-
 }
 
 
