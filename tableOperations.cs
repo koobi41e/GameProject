@@ -11,210 +11,117 @@ public class tableOperations : MonoBehaviour
 
 	// the URL that leads to the php file MUST
 	// have a '?' at the end
-	string URL = "http://koobigamesite.azurewebsites.net/?";	
+	static string URL = "http://koobigamesite.azurewebsites.net/?";
 	//------------------------------------
-	char[] parsing= {'|',';'};
-	int SUCCESS=0;
-	WWW display;
-	string placeholder;
-	IEnumerator Start()
-	{
-		WWW display = new WWW(URL);
-		yield return display;
-		print(display.text);
-		placeholder=display.text;
-		SUCCESS=1;
-	}
 
-
-	public string username;
-	public int team;
-	void Update()
-	{
-		if(Input.GetKeyDown("r"))
-		{
-			SUCCESS=0;
-			StartCoroutine(reLoad());
-		}
-		if(Input.GetKeyDown(KeyCode.Alpha1))
-		{
-			StartCoroutine(createT());
-		}
-
-		if(Input.GetKeyDown(KeyCode.Alpha2))
-		{
-			print("in2");
-			StartCoroutine(makePlayer(username));
-			print("Done");
-		}
-
-		if(Input.GetKeyDown(KeyCode.Alpha3))
-		{
-			StartCoroutine(deletePlayer(username));
-		}
-
-		if(Input.GetKeyDown(KeyCode.Alpha4))
-		{
-			StartCoroutine(setTeam(username, team));
-		}
-
-		if(Input.GetKeyDown(KeyCode.Alpha5))
-		{
-			StartCoroutine(updateKill(username));
-		}
-
-		if(Input.GetKeyDown(KeyCode.Alpha6))
-		{
-			StartCoroutine(updateDeaths(username));
-		}
-
-		if(Input.GetKeyDown(KeyCode.Alpha7))
-		{
-			StartCoroutine(incScore(username));
-		}
-
-		if(Input.GetKeyDown(KeyCode.Alpha8))
-		{
-			StartCoroutine(delete());
-		}
-	}
-
-	void OnGUI()
-	{	
-		string[] parse1;
-		//string post_url = URL;
-		//WWW display = new WWW(post_url);
-		//yield display;
-		if(SUCCESS==0)
-			GUI.Box(new Rect(0,0,100,100),"loading");
-		if(SUCCESS==1)
-		{
-		parse1= placeholder.Split(parsing);
-
-		GUI.Box(new Rect(0,0,100,100),parse1[0]);
-		}
-	}
-
-	IEnumerator reLoad()
-	{
-		WWW display = new WWW(URL);
-		yield return display;
-		print(display.text);
-		placeholder=display.text;
-		SUCCESS=1;
-	}
-
-	// creates a unique table and returns the id
-	// of the table.
-	//creates a new table 
-	//---------------------------------------------------------------------
-	IEnumerator createT()
-	{
-		string post_url = URL + "operation=" + "create";
-		WWW hs_post = new WWW(post_url);
-		yield return hs_post;
-		print("done");
-	}
-	//---------------------------------------------------------------------
+	static string[] parsing;
+	static char[] parser = {'|',';'};
 
 	//adds a row into a certain table
+	// public static IEnumerator makePlayer(string name, string TBName)
+	// name is the name of a player
+	// TBName is the name of the table that the player is to be added
 	//---------------------------------------------------------------------
-	IEnumerator makePlayer(string name)
+	public static IEnumerator makePlayer(string name, string TBName)
 	{
-		print("in");
-		string post_url = URL + "operation=" + "makePlayer" + "&name=" + name;
+		string post_url = URL + "operation=" + "makePlayer" + "&playerName=" + name + "&kills=" + 0 + "&deaths=" + 0 + "&score=" + 0 + "&team=" + 0 + "&TBName=" + TBName;
 		WWW hs_post = new WWW(post_url);
 		yield return hs_post;
-		print("done");
-	}
-	//---------------------------------------------------------------------
-
-	//removes a row into a certain table
-	//---------------------------------------------------------------------
-	IEnumerator deletePlayer(string name)
-	{
-		string post_url = URL + "operation=" + "deletePlayer" + "&name=" + name;
-		WWW hs_post = new WWW(post_url);
-		yield return hs_post;
-		print("done");
 	}
 	//---------------------------------------------------------------------
 
 	//updates a certain row
 	//---------------------------------------------------------------------
-	IEnumerator setTeam(string name, int NewValue)
+	//public static IEnumerator updateTeam(string name, int NewValue, string TBName)
+	// name is the name of the player to ba updated
+	// NewValue is the value to which the team will be changed to.
+	// TBName is the table in which the player exists
+	public static IEnumerator updateTeam(string name, int NewValue, string TBName)
 	{
-		string post_url = URL + "operation=" + "setTeam" + "&team=" + NewValue + "&name=" + name;
+		string post_url = URL + "operation=" + "updateTeam" + "&team=" + NewValue + "&name=" + name + "&TBName=" + TBName;
 		WWW hs_post = new WWW(post_url);
 		yield return hs_post;
-		print("done");
 	}
 
-	IEnumerator updateKill(string name)
+	//public static IEnumerator updateKills(string name, int NewValue, string TBName)
+	// name; the name of the player to be updated
+	// TBName; the name of the table in which the player exists
+	// this function incraments by one
+	public static IEnumerator updateKills(string name, string TBName)
 	{
-		string post_url = URL + "operation=" + "updateKill" +"&name=" + name;
+		string post_url = URL + "operation=" + "updateKills" + "&name=" + name + "&TBName=" + TBName;
 		WWW hs_post = new WWW(post_url);
 		yield return hs_post;
-		print("done");
 	}
 
-	IEnumerator updateDeaths(string name)
+	//public static IEnumerator updateDeaths(string name, string TBName)
+	// name; the name of the player to be updated
+	// TBName; the name of the table in which the player exists
+	// this function updates by one
+	public static IEnumerator updateDeaths(string name, string TBName)
 	{
-		string post_url = URL + "operation=" + "updateDeath" + "&name=" + name;
+		string post_url = URL + "operation=" + "updateDeaths" + "&name=" + name + "&TBName=" + TBName;
 		WWW hs_post = new WWW(post_url);
 		yield return hs_post;
-		print("done");
 	}
 
-	IEnumerator incScore(string name)
+	//public static IEnumerator updateScore(string name, int NewValue, string TBName)
+	// name; the name of the player to be updated
+	// TBName; the name of the table in which the player exists
+	// NewValue; is the value that the score will be changed to
+	public static IEnumerator updateScore(string name, int NewValue, string TBName)
 	{
-		string post_url = URL + "operation=" + "incScores" + "&name="+name;
+		string post_url = URL + "operation=" + "updateScore" + "&score=" + NewValue + "&name=" + name + "&TBName=" + TBName;
 		WWW hs_post = new WWW(post_url);
 		yield return hs_post;
-		print("done");
 	}
 	//----------------------------------------------------------------------
 
 	//deletes a certain table
 	//----------------------------------------------------------------------
-	IEnumerator delete()
+	//public static IEnumerator delete(string TBName)
+	// TBName is the name of the table to be deleted
+	public static IEnumerator delete(string TBName)
 	{
-		string post_url = URL + "operation=" + "deleteTable";
+		string post_url = URL + "operation=" + "delete" + "&TBName=" + TBName;
 		WWW hs_post = new WWW(post_url);
 		yield return hs_post;
-		print("done");
 	}
 	//----------------------------------------------------------------------
 
-	//returns a string of the information on the database
+	//creates table
+	//----------------------------------------------------------------------
+	//public static IEnumerator createT(string TBName)
+	public static IEnumerator createT(string TBName)
+	{
+		string post_url = URL + "operation=" + "create" + "&TBName=" + TBName;
+		WWW hs_post = new WWW(post_url);
+		yield return hs_post;
+	}
+	//---------------------------------------------------------------------
+
+	// gets data from a certain table
+	//----------------------------------------------------------------------
+	private static IEnumerator show(string TBName)
+	{
+		string post_url = URL + "operation=" + "showData" + "&TBName=" + TBName;
+		WWW hs_post = new WWW(post_url);
+		yield return hs_post;
+		string temp = hs_post.text;
+		parsing = temp.Split(parser);
+	}
+
+	private static string[] getData()
+	{
+		return parsing;
+	}
 	
-	string[] parse1;
-	//-----------------------------------------------------------------------
-	string[] getdata()
+	//public string[] dataGet(string TBName)
+	//TBName is the table from which the data will be retrived.
+	public string[] dataGet(string TBName)
 	{
-		StartCoroutine(getpost());
-		while(SUCCESS!=1);
-		print("getdata" + parse1[0]);	
-		return parse1;
+		StartCoroutine(show(TBName));
+		return getData();
 	}
-	//-----------------------------------------------------------------------
-
-	IEnumerator getpost()
-	{
-		string post_url = URL;
-		WWW display = new WWW(post_url);
-		yield return display;
-		string placeholder=display.text;
-		parse1= placeholder.Split(';');
-		SUCCESS=1;
-
-
-	}
-	/*
-	void getdata()
-	{
-		HttpClient site = httpClient();
-		site.BaseAddress
-	}
-	*/
+	//----------------------------------------------------------------------
 }
