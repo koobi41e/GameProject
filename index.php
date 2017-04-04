@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Jose Salinas and Ibook Eyoita
+ * User: Jose Salinas and Ibook Eyoita and Earl Blizzard
  * Date: 2/6/17
  * Time: 6:09 PM
  */
@@ -123,6 +123,24 @@ if($tableOperation == "incRounds")
     $incRoundCmd = "UPDATE [dbo].[$tableName] set Rounds = Rounds+1 where Name = '$name'";
     $incRounds = sqlsrv_query($conn,$incRoundCmd);
     echo "you have finished calling  table operation (incRound)";
+}
+
+//refresh after rounds
+if($tableOperation == "roundRefresh")
+{
+    echo "you have called table operation (roundRefresh)";
+    $roundRefreshCmd = "UPDATE [dbo].[$tableName] set Kills = 0 , Deaths = 0, Scores = 0 where Name = '$name'";
+    $roundRefresh = sqlsrv_query($conn,$roundRefreshCmd);
+    echo "you have finished calling  table operation (roundRefresh)";
+}
+
+//refresh after games
+if($tableOperation == "gameRefresh")
+{
+    echo "you have called table operation (gameRefresh)";
+    $gameRefreshCmd = "UPDATE [dbo].[$tableName] set Kills = 0 , Deaths = 0, Scores = 0, Rounds = 0 where Name = '$name'";
+    $gameRefresh = sqlsrv_query($conn,$gameRefreshCmd);
+    echo "you have finished calling  table operation (gameRefresh)";
 }
 
 //setting teams
