@@ -33,7 +33,7 @@ if($conn != true)
 //}
 
 //creating the table
-
+//create tables with TBName=nameOfTable
 if($tableOperation == 'create')
 {
     echo "you have called table operation and create";
