@@ -18,6 +18,7 @@ $kills = $_GET['kills'];
 $deaths = $_GET['deaths'];
 $score = $_GET['score'];
 $team = $_GET['team'];
+$tableName = $_GET['TBName'];
 $tableOperation = $_GET['operation'];
 
 //testing to see if DB is connected
@@ -37,9 +38,9 @@ if($tableOperation == 'create')
 {
     echo "you have called table operation and create";
     echo "<br>";
-    $createCmd = "CREATE TABLE [dbo].[leaderboards]
+    $createCmd = "CREATE TABLE [dbo].[$tableName]
     (
-	  [Id] INT IDENTITY(1,1) NOT NULL PRIMARY KEY, 
+      [Id] INT IDENTITY(1,1) NOT NULL PRIMARY KEY, 
       [Name] VARCHAR(50) NOT NULL, 
       [Kills] INT NOT NULL, 
       [Deaths] INT NOT NULL, 
@@ -53,7 +54,7 @@ if($tableOperation == 'create')
 
 if($tableOperation == "showData")
 {
-    $tsql = "SELECT * FROM leaderboards";
+    $tsql = "SELECT * FROM $tableName";
     $getProducts = sqlsrv_query($conn, $tsql);
     if ($getProducts == FALSE)
     {
@@ -70,7 +71,7 @@ if($tableOperation == "makePlayer")
 {
     echo "you have called table operation (makePlayer)";
     //it should auto increment and have a null value for team.
-    $makeCmd = "INSERT into [dbo].[leaderboards] values ('$name',0,0,0,0,null)";
+    $makeCmd = "INSERT into [dbo].[$tableName] values ('$name',0,0,0,0,null)";
     $makePlayer = sqlsrv_query($conn, $makeCmd);
     echo "you have finished calling table operation (makePlayer) \n";
     echo "name is $name";
@@ -83,7 +84,7 @@ if($tableOperation == "deletePlayer")
     echo "about to check delete player";
     echo "<br>";
     echo "you have called table operation (deletePlayer)";
-    $deletePlayerCmd = "DELETE from [dbo].[leaderboards] where name = '$name'";
+    $deletePlayerCmd = "DELETE from [dbo].[$tableName] where name = '$name'";
     $deletePlayer = sqlsrv_query($conn, $deletePlayerCmd);
     echo "you have finished calling table operation (deletePlayer) \n";
 }
@@ -92,7 +93,7 @@ if($tableOperation == "deletePlayer")
 if($tableOperation == "updateKill")
 {
     echo "you have called table operation (updateKill)";
-    $killCmd = "UPDATE [dbo].[leaderboards] set Kills = Kills+1 where Name = '$name'";
+    $killCmd = "UPDATE [dbo].[$tableName] set Kills = Kills+1 where Name = '$name'";
     $updateKill = sqlsrv_query($conn,$killCmd);
     echo "you have finished calling  table operation (updatingKill)";
 }
@@ -101,7 +102,7 @@ if($tableOperation == "updateKill")
 if($tableOperation == "updateDeath")
 {
     echo "you have called table operation (updateDeath)";
-    $deathCmd = "UPDATE [dbo].[leaderboards] set Deaths = Deaths+1 where Name = '$name'";
+    $deathCmd = "UPDATE [dbo].[$tableName] set Deaths = Deaths+1 where Name = '$name'";
     $updateDeath = sqlsrv_query($conn,$deathCmd);
     echo "you have finished calling  table operation (updatingDeath)";
 }
@@ -110,7 +111,7 @@ if($tableOperation == "updateDeath")
 if($tableOperation == "incScores")
 {
     echo "you have called table operation (incScores)";
-    $incCmd = "UPDATE [dbo].[leaderboards] set Scores = Scores+1 where Name = '$name'";
+    $incCmd = "UPDATE [dbo].[$tableName] set Scores = Scores+1 where Name = '$name'";
     $incScores = sqlsrv_query($conn,$incCmd);
     echo "you have finished calling  table operation (incScores)";
 }
@@ -119,7 +120,7 @@ if($tableOperation == "incScores")
 if($tableOperation == "incRounds")
 {
     echo "you have called table operation (incRounds)";
-    $incRoundCmd = "UPDATE [dbo].[leaderboards] set Rounds = Rounds+1 where Name = '$name'";
+    $incRoundCmd = "UPDATE [dbo].[$tableName] set Rounds = Rounds+1 where Name = '$name'";
     $incRounds = sqlsrv_query($conn,$incRoundCmd);
     echo "you have finished calling  table operation (incRound)";
 }
@@ -132,13 +133,13 @@ if($tableOperation == "setTeam")
     if($team == 1)
     {
         echo "you entered in setTeam 2!!!";
-        $set = "UPDATE [dbo].[leaderboards] set Team = 1 where Name = '$name'";
+        $set = "UPDATE [dbo].[$tableName] set Team = 1 where Name = '$name'";
         echo "<br>";
     }
     else if($team == 2)
     {
         echo "you entered in setTeam 2!!!";
-        $set = "UPDATE [dbo].[leaderboards] set Team = 2 where Name = '$name'";
+        $set = "UPDATE [dbo].[$tableName] set Team = 2 where Name = '$name'";
         echo "<br>";
     }
     $setTeam = sqlsrv_query($conn,$set);
@@ -150,14 +151,14 @@ if($tableOperation == "setTeam")
 if($tableOperation == "deleteTable")
 {
     echo "you have called table operation (delete)";
-    $deleteCmd = "Drop Table [dbo].[leaderboards]";
+    $deleteCmd = "Drop Table [dbo].[$tableName]";
     $delete = sqlsrv_query($conn,$deleteCmd);
     echo "you have finished calling table operation (delete)";
 }
 
 if($tableOperation == "highestScore")
 {
-    $maxScore = "SELECT Name, Scores FROM leaderboards WHERE Scores = (Select max(Scores) From leaderboards)";
+    $maxScore = "SELECT Name, Scores FROM $tableName WHERE Scores = (Select max(Scores) From $tableName)";
     $getScore = sqlsrv_query($conn, $maxScore);
     while( $row = sqlsrv_fetch_array( $getScore, SQLSRV_FETCH_ASSOC ))
     {
