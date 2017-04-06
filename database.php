@@ -38,6 +38,7 @@ $createCmd = "CREATE TABLE [dbo].[leaderboards]
       [Kills] INT NOT NULL, 
       [Deaths] INT NOT NULL, 
       [Scores] INT NOT NULL, 
+      [Rounds] INT NOT NULL,
       [Team] INT
     )";
 $create = sqlsrv_query($conn, $createCmd);
@@ -54,7 +55,7 @@ if($tableOperation == "showData")
 
     while( $row = sqlsrv_fetch_array( $getProducts, SQLSRV_FETCH_ASSOC ))
     {
-        echo $row['Name']."|".$row['Kills']."|".$row['Deaths']."|".$row['Scores']."|".$row['Team'].";";
+       echo $row['Name']."|".$row['Kills']."|".$row['Deaths']."|".$row['Scores']."|".$row['Rounds']."|".$row['Team'].";";
     }
 }
 
@@ -62,7 +63,7 @@ if($tableOperation == "showData")
 if($tableOperation == "makePlayer")
 {
     //it should auto increment and have a null value for team.
-    $makeCmd = "INSERT into [dbo].[leaderboards] values ('$name',0,0,0,0)";
+    $makeCmd = "INSERT into [dbo].[leaderboards] values ('$name',0,0,0,0,null)";
     $makePlayer = sqlsrv_query($conn, $makeCmd);
 }
 
@@ -100,6 +101,16 @@ if($tableOperation == "incScores")
     $incScores = sqlsrv_query($conn,$incCmd);
     echo "you have finished calling  table operation (incScores)";
 }
+
+//incrementing the rounds
+if($tableOperation == "incRounds")
+{
+    echo "you have called table operation (incRounds)";
+    $incRoundCmd = "UPDATE [dbo].[leaderboards] set Rounds = Rounds+1 where Name = '$name'";
+    $incRounds = sqlsrv_query($conn,$incRoundCmd);
+    echo "you have finished calling  table operation (incRound)";
+}
+
 //setting teams
 if($tableOperation == "setTeam")
 {
@@ -129,3 +140,16 @@ if($tableOperation == "deleteTable")
     $delete = sqlsrv_query($conn,$deleteCmd);
     echo "you have finished calling table operation (delete)";
 }
+
+//get the highest score
+if($tableOperation == "highestScore")
+{
+    $maxScore = "SELECT Name, Scores FROM leaderboards WHERE Scores = (Select max(Scores) From leaderboards)";
+    $getScore = sqlsrv_query($conn, $maxScore);
+    while( $row = sqlsrv_fetch_array( $getScore, SQLSRV_FETCH_ASSOC ))
+    {
+        echo $row['Name']."|".$row['Scores']."|".";";
+        echo "<br>";
+    }
+}
+
