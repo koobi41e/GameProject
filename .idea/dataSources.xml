@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="GameDB" uuid="5f444f90-c00e-4aa9-b130-989533f3a5ff">
+    <data-source source="LOCAL" name="GameDB" uuid="25f712c1-51ec-4ae5-9015-f5e5cd8ae793">
       <driver-ref>sqlserver.ms</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>

@@ -116,6 +116,26 @@ if($tableOperation == "incScores")
     echo "you have finished calling  table operation (incScores)";
 }
 
+//updating the score
+if($tableOperation == "updateScore")
+{
+    echo "you have called table operation (updateScore)";
+    echo "<br>";
+    $updateCmd = "UPDATE [dbo].[$tableName] set Scores = Scores+ $score where Name = '$name'";
+    $updateScore = sqlsrv_query($conn,$updateCmd);
+    echo "you have finished calling table operation (updateScore)";
+}
+
+//set score
+if($tableOperation == "setScore")
+{
+    echo "you have called table operation (setScore)";
+    echo "<br>";
+    $setScoreCmd = "UPDATE [dbo].[$tableName] set Scores = $score where Name = '$name'";
+    $setScore = sqlsrv_query($conn,$setScoreCmd);
+    echo "you have finished calling table operation (setScore)";
+}
+
 //incrementing the rounds
 if($tableOperation == "incRounds")
 {
