@@ -54,7 +54,7 @@ if($tableOperation == 'create')
 
 if($tableOperation == "showData")
 {
-    $tsql = "SELECT * FROM $tableName";
+    $tsql = "SELECT * FROM $tableName ORDER BY Scores";//earl
     $getProducts = sqlsrv_query($conn, $tsql);
     if ($getProducts == FALSE)
     {
@@ -163,6 +163,18 @@ if($tableOperation == "gameRefresh")
     echo "you have finished calling  table operation (gameRefresh)";
 }
 
+//largest round//Earl
+if($tableOperation == "largestRound")
+{
+    $maxRound = "SELECT Name, Rounds FROM $tableName WHERE Rounds = (Select max(Rounds) From $tableName)";
+    $getRound = sqlsrv_query($conn, $maxRound);
+    while( $row = sqlsrv_fetch_array( $getRound, SQLSRV_FETCH_ASSOC ))
+    {
+        echo $row['Name']."|".$row['Rounds']."|".";";
+
+    }
+}
+
 //setting teams
 if($tableOperation == "setTeam")
 {
@@ -204,5 +216,4 @@ if($tableOperation == "highestScore")
 
     }
 }
-
 
