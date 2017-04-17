@@ -140,7 +140,7 @@ if($tableOperation == "setScore")
 if($tableOperation == "incRounds")
 {
     echo "you have called table operation (incRounds)";
-    $incRoundCmd = "UPDATE [dbo].[$tableName] set Rounds = Rounds+1 where Name = '$name'";
+    $incRoundCmd = "UPDATE [dbo].[$tableName] set Rounds = Rounds+1 where Score = max(Score)";
     $incRounds = sqlsrv_query($conn,$incRoundCmd);
     echo "you have finished calling  table operation (incRound)";
 }
