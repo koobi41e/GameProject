@@ -54,7 +54,7 @@ if($tableOperation == 'create')
 
 if($tableOperation == "showData")
 {
-    $tsql = "SELECT * FROM $tableName ORDER BY Scores";//earl
+    $tsql = "SELECT * FROM $tableName ORDER BY Scores DESC";//earl
     $getProducts = sqlsrv_query($conn, $tsql);
     if ($getProducts == FALSE)
     {
